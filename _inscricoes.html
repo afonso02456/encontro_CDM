@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Inscrição</title>
+	<link rel="stylesheet" type="text/css" href="_style2.css">
+	<link rel="icon" type="image/png" href="logotipo.png">
+</head>
+<script>
+	function saveTextAsFile() {
+	  var textToWrite = 
+	  'Inscrição Workshop:' + "\n" + 
+	  '----------------------------------------------------------' +"\n"+ "\n" + 
+
+	  'Workshop: '+ document.getElementById("selecionar").value +"\n"+ "\n" +
+		 
+	  'Nome Completo: ' + document.getElementById("fname").value +"\n"+
+	  'Telemóvel: ' + document.getElementById("ftelemovel").value +"\n"+
+	  'E-Mail: '+ document.getElementById("femail").value +"\n"+
+	  'Ano: '+ document.getElementById("selecionar2").value +"\n"+
+	  'Curso: '+ document.getElementById("selecionar3").value +"\n"+
+	  'Morada: '+ document.getElementById("fmorada").value +"\n"+
+	  'Código-Postal: '+ document.getElementById("fpostal").value +"\n"
+		  
+	var textFileAsBlob = new Blob([textToWrite], {
+    type: 'text/plain'
+  });
+  var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+
+  var downloadLink = document.createElement("a");
+  downloadLink.download = fileNameToSaveAs;
+ 
+  if (window.webkitURL != null) {
+    
+    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+  } 
+  downloadLink.click();
+}
+</script>
+<body id="fundo">
+	<div id="_inscricoes">
+		<center><div id="retangulo_">
+			<img id="Imagem_4" src="Imagem_4.png" alt="Politécnico de Coimbra">
+		</div></center>
+		
+		<center><div id="retangulo">
+			<div id="Inscricoes_Workshops">
+				<p>Inscrições Workshops</p>
+			</div>
+			<img id="barras" src="barras.png" alt="Barras">
+			<form method="post" action="">
+				<div id="Seleciona_o_Workshop_Pretendido">
+					<p>Seleciona o Workshop Pretendido</p>
+				</div>
+					<select id="selecionar" required>
+						<option value="" data-default disabled selected></option>
+						<option id="workshop1" class="result" value="Workshop - Elementos criativos para o design de som">Workshop - Elementos criativos para o design de som</option>
+						<option id="workshop2" value="Workshop - O poder da cor na comunicação de emoções">Workshop - O poder da cor na comunicação de emoções</option>
+						<option id="workshop3" value="Workshop - Pensar nas imagens - O processo criativo no design">Workshop - Pensar nas imagens - O processo criativo no design</option>
+					</select>
+				<div id="Dados_Pessoais">
+					<p>Dados Pessoais</p>
+				</div>
+				<div id="Nome_Completo">
+					<p>Nome Completo *</p>
+				</div>
+					<input type="text" id="fname" required><br>
+				<div id="Telemovel">
+					<p>Telemóvel *</p>
+				</div>
+					<input type="tel" id="ftelemovel" maxlength="9" required><br>
+				<div id="Email">
+					<p>E-Mail *</p>
+				</div>
+					<input type="email" id="femail" required><br>
+				<div id="Ano">
+					<p>Ano</p>
+				</div>
+					<select id="selecionar2" required>
+						<option value="" data-default disabled selected></option>
+						<option value="1º Ano">1º Ano</option>
+						<option value="2º Ano">2º Ano</option>
+						<option value="3º Ano">3º Ano</option>
+					</select>
+				<div id="Curso">
+					<p>Curso</p>
+				</div>
+					<select id="selecionar3" required>
+						<option value="" data-default disabled selected></option>
+						<option value="Comunicação e Design Multimédia">Comunicação e Design Multimédia</option>
+						<option value="Comunicação Organizacional">Comunicação Organizacional</option>
+						<option value="Desporto e Lazer">Desporto e Lazer</option>
+					</select>
+				<div id="Morada">
+					<p>Morada *</p>
+				</div>
+					<input type="text" id="fmorada" required><br>
+				<div id="Codigo_Postal">
+					<p>Código-Postal *</p>
+				</div>
+					<input type="text" id="fpostal" required><br>
+				<div id="inputFileNameToSaveAs">
+					<button onClick="saveTextAsFile()" id="botao" type="submit">SUBMETER</button>
+				</div>
+			</form>
+		</div></center>
+		<img id="casa" src="Imagem_5.png" alt="Casa">
+		<div id="Voltar_Para_a_Pagina_Inicial">
+				<a href="index.html"><p>VOLTAR PARA A PÁGINA INICIAL</p></a>
+		</div>
+	</div>
+</body>
+</html>
